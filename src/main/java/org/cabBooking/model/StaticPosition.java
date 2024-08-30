@@ -14,14 +14,21 @@ public class StaticPosition implements Position{
         this.y = position.getY();
     }
 
+    @Override
+    public String toString() {
+        return "StaticPosition{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
 
     @Override
     public double getX() {
-        return 0;
+        return this.x;
     }
 
     @Override
     public double getY() {
-        return 0;
+        return this.y;
     }
 }

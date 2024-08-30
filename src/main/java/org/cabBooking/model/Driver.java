@@ -3,6 +3,7 @@ package org.cabBooking.model;
 public class Driver {
     private String id;
     private String name;
+    private Boolean  available = true;
 
 
 
@@ -22,4 +23,11 @@ public class Driver {
         this.name = name;
     }
 
+    public Boolean getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(Boolean available) {
+        this.available = available;
+    }
 }

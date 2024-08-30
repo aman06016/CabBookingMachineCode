@@ -6,7 +6,7 @@ import org.cabBooking.repository.InMemoryRepository;
 
 public class DriverService {
 
-    private DriverRepository driverRepository = InMemoryRepository.driverRepository;
+    private final DriverRepository driverRepository = InMemoryRepository.driverRepository;
 
     public Driver registerDriver(String id, String driverName){
         Driver driver = new Driver();
@@ -14,8 +14,14 @@ public class DriverService {
         driver.setName(driverName);
 
         driverRepository.save(driver);
-        System.out.println(String.format("driver %s has been registered", driver.getName()));
+        System.out.printf("driver %s has been registered%n", driver.getName());
         return driver;
+    }
+
+    public void updateDriverAvailability(String driverId, Boolean isAvailable){
+        Driver driver = driverRepository.findById(driverId);
+        driver.setAvailable(isAvailable);
+        driverRepository.save(driver);
     }
 
 

@@ -4,6 +4,14 @@ public class DynamicPosition implements   Position{
     private double x ;
     private double y;
 
+    @Override
+    public String toString() {
+        return "DynamicPosition{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
     public DynamicPosition(int x , int y){
         this.x = x;
         this.y = y;

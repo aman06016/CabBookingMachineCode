@@ -2,7 +2,9 @@ package org.cabBooking.repository;
 
 import org.cabBooking.model.Ride;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class RideRepository {
@@ -20,4 +22,14 @@ public class RideRepository {
         return ride;
     }
 
+    public List<Ride> findRidesByRiderId(String riderId) {
+        List<Ride> listOfRidesByRiderId = new ArrayList<>();
+
+        for(Ride ride:mapOfOIdToRide.values()){
+            if(riderId.equals(ride.getRiderId())){
+                listOfRidesByRiderId.add(ride);
+            }
+        }
+        return listOfRidesByRiderId;
+    }
 }

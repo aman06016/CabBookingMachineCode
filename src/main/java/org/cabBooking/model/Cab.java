@@ -6,6 +6,7 @@ public class Cab {
     private String driverId;
 
     private Position position;
+    private Boolean isRiding;
 
 
     public Cab(String modelName) {
@@ -45,5 +46,21 @@ public class Cab {
 
     public void setDriverId(String driverId) {
         this.driverId = driverId;
+    }
+
+    public Boolean getRiding() {
+        return isRiding;
+    }
+
+    public void setRiding(Boolean riding) {
+        isRiding = riding;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
     }
 }
